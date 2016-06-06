@@ -10,7 +10,7 @@
 
 @interface FISTicTacToeGame ()
 
-@property (nonatomic, strong) NSMutableArray *board;
+
 
 @end
 
@@ -19,49 +19,90 @@
 
 -(instancetype)init
 {
-    self = [super init];
+    self = [super init];                     //WTF do i do here?
     if(self) {
-        // Do initialization of your game here, inside this if statement.
-        // Leave the rest of this method alone :)
-
+        [self resetBoard];
     }
 
     return self;
 }
 
--(void)resetBoard
-{
-
+-(void)resetBoard{
+    self.board = [@[
+                    
+                    [@[@"",@"",@""] mutableCopy],
+                    [@[@"",@"",@""] mutableCopy],
+                    [@[@"",@"",@""] mutableCopy]
+                    
+                    ] mutableCopy];
+    
+    NSLog(@"resetBoard");
 }
 
--(NSString *)playerAtColumn:(NSUInteger)column row:(NSUInteger)row
-{
+-(NSString *)playerAtColumn:(NSUInteger)column row:(NSUInteger)row{
+    
+    if ([self.board[column][row] isEqualToString:@"X"]) {
+        return @"X";
+    } else if ([self.board[column][row] isEqualToString:@"O"]){
+        return @"O";
+    } else{
+    
     return @"";
+    }
 }
 
 -(BOOL)canPlayAtColumn:(NSUInteger)column row:(NSUInteger)row
 {
-    return YES;
+    if ([self.board[column][row] isEqualToString: @""]) {
+        return YES;
+    } else {
+        return NO;
+    }
+    
 }
 
--(void)playXAtColumn:(NSUInteger)column row:(NSUInteger)row
-{
+-(void)playXAtColumn:(NSUInteger)column row:(NSUInteger)row {
+    
+    self.board[column][row] = @"X";
+    
+    
 
 }
 
--(void)playOAtColumn:(NSUInteger)column row:(NSUInteger)row
-{
+-(void)playOAtColumn:(NSUInteger)column row:(NSUInteger)row {
+    
+    self.board[column][row] = @"O";
+    
 
 }
 
--(NSString *)winningPlayer
-{
+-(NSString *)winningPlayer {
+
+    for(NSUInteger a = 0; a < 3; a++) {
+        if (self.board[a][0] == self.board[a][1] && self.board[a][1] == self.board[a][2]) {
+            return self.board[a][0];
+        } else if (self.board[0][a] == self.board[1][a] && self.board[1][a] == self.board[2][a]) {
+            return self.board[0][a];
+        }
+        if (self.board[0][0] == self.board[1][1] && self.board[1][1] == self.board[2][2]) {
+            return self.board[0][0];
+        }
+        if (self.board[0][2] == self.board[1][1] && self.board[1][1] == self.board[2][0]) {
+            return self.board[0][2];
+        }
+    }
+    
     return @"";
 }
 
--(BOOL)isADraw
-{
-    return NO;
+-(BOOL)isADraw {
+    
+    if ([[self winningPlayer] isEqualToString:@""]) {
+        return NO;
+    } else {
+        return YES;
+    }
+    
 }
 
 @end

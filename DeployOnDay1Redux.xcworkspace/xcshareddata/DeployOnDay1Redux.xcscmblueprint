@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D5C3D1B050D73C2A8C8A1AE81E2B1B775C111147",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D5C3D1B050D73C2A8C8A1AE81E2B1B775C111147" : 0,
+    "71A9BF37CAEAF81DA08D1695C8B2659BEE662CC0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "475A48A0-F51B-40EA-8EA8-3C6D0EA648E6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D5C3D1B050D73C2A8C8A1AE81E2B1B775C111147" : "objc-deploy-on-day-1-redux-ios-0616\/",
+    "71A9BF37CAEAF81DA08D1695C8B2659BEE662CC0" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DeployOnDay1Redux",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DeployOnDay1Redux.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:davidvypark\/objc-dictionary-ice-cream-001",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "71A9BF37CAEAF81DA08D1695C8B2659BEE662CC0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:davidvypark\/objc-deploy-on-day-1-redux-ios-0616.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D5C3D1B050D73C2A8C8A1AE81E2B1B775C111147"
+    }
+  ]
+}
