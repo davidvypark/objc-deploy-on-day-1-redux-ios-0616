@@ -97,12 +97,13 @@
 
 -(BOOL)isADraw {
     
-    if ([[self winningPlayer] isEqualToString:@""]) {
-        return NO;
-    } else {
-        return YES;
-    }
+    NSArray *flatArray = [self.board valueForKeyPath:@"@unionOfArrays.self"];
     
+    if (![flatArray containsObject:@""]) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end

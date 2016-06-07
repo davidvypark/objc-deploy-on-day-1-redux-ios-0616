@@ -10,8 +10,8 @@
 
 @interface FISTicTacToeGame : NSObject
 
-@property (nonatomic, assign) NSUInteger xPlayerWinCount;
-@property (nonatomic, assign) NSUInteger oPlayerWinCount;
+@property (nonatomic, assign) NSInteger xPlayerWinCount;
+@property (nonatomic, assign) NSInteger oPlayerWinCount;
 @property (nonatomic, strong) NSMutableArray *board;
 
 -(void)resetBoard;

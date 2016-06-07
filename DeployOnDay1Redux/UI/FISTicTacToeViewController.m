@@ -39,13 +39,14 @@
 
 @property (nonatomic, assign) BOOL gameIsCanceled;
 
+
 @end
 
 
 @implementation FISTicTacToeViewController
 
--(void)viewDidLoad
-{
+-(void)viewDidLoad{
+    
     [super viewDidLoad];
 
     for(FISBoardSpaceView *boardSpace in self.boardSpaces) {
@@ -190,9 +191,26 @@
     else if([symbol isEqualToString:@"O"]) {
         self.game.oPlayerWinCount++;
     }
-
+    [[NSUserDefaults standardUserDefaults] setInteger:self.game.xPlayerWinCount forKey:@"xPlayerWinCount"];
+    [[NSUserDefaults standardUserDefaults] setInteger:self.game.oPlayerWinCount forKey:@"oPlayerWinCount"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    NSLog(@"***SAVE = XPlayer:%li YPlayer%li", self.game.xPlayerWinCount, self.game.oPlayerWinCount);
+    
     self.winningPlayerSymbol = symbol;
     [self performSegueWithIdentifier:@"GameToWinModalSegueID" sender:nil];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:YES];
+    
+    NSLog(@"hi");
+    NSLog(@"***LOAD = XPlayer:%li YPlayer%li", self.game.xPlayerWinCount, self.game.oPlayerWinCount);
+    //NSUserDefaults *saveGame = [NSUserDefaults standardUserDefaults];
+    self.game.xPlayerWinCount = [[NSUserDefaults standardUserDefaults] integerForKey:@"xPlayerWinCount"];
+    self.game.oPlayerWinCount = [[NSUserDefaults standardUserDefaults] integerForKey:@"yPlayerWinCount"];
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

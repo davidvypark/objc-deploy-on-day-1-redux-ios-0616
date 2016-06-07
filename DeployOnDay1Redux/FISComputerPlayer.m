@@ -128,12 +128,12 @@
         
     if ((bottomLeft[0] == bottomLeft[1] && ![bottomLeft[0] isEqualToString:@""]) ||(bottomLeft[1] == bottomLeft[2] && ![bottomLeft[1] isEqualToString:@""]) || (bottomLeft[0] == bottomLeft[2] && ![bottomLeft[0] isEqualToString:@""])) {
         if([bottomLeft containsObject:@""]) {
-            NSUInteger bottomLeftIndex = [topLeft indexOfObject:@""];
+            NSUInteger bottomLeftIndex = [bottomLeft indexOfObject:@""];
             
-            if (bottomLeftIndex == 1) {
+            if (bottomLeftIndex == 0) {
                 column = 2;
                 row = 0;
-            } else if (bottomLeftIndex == 2) {
+            } else if (bottomLeftIndex == 1) {
                 column = 1;
                 row = 1;
             } else {
